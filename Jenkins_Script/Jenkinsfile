@@ -13,5 +13,37 @@ pipeline
                 echo 'Code checkout completed'
             }
         }
+
+        stage('Installing Python Dependencies')
+        {
+            steps
+            {
+                sh """
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install -r req.txt
+                """
+            }
+        }
+
+        stage('Run Test')
+        {
+            steps
+            {
+                sh """
+                . venv/bin/activate
+                pytest
+                """
+            }
+        }
+
+        stage('Build Complete')
+        {
+            steps
+            {
+                echo 'Build and tests completed successfully!'
+            }
+        }
+
     }
 }
