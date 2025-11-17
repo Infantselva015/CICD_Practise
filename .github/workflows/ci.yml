@@ -24,4 +24,4 @@ jobs:
       - name: Run Test
         run: |
           echo "Running basic CI test..."
-          python - <<EOF print("Selva CI simulation OK!") EOF
+          python -c "print('Selva CI simulation OK!')"
