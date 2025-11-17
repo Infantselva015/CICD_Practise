@@ -1,0 +1,17 @@
+pipeline
+{
+    agent any
+
+    stages
+    {
+        stage('Checkout From Github')
+        {
+            steps
+            {
+                echo 'Checking out code from GitHub repository'
+                git branch: 'new_test', url: 'https://github.com/Infantselva015/CICD_Practise.git'
+                echo 'Code checkout completed'
+            }
+        }
+    }
+}
