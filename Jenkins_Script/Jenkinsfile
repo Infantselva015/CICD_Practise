@@ -16,6 +16,10 @@ pipeline
 
         stage('Installing Python Dependencies')
         {
+            agent
+            {
+                docker { image 'python:3.12-slim' }
+            }
             steps
             {
                 sh """
@@ -28,6 +32,10 @@ pipeline
 
         stage('Run Test')
         {
+            agent
+            {
+                docker { image 'python:3.12-slim' }
+            }
             steps
             {
                 sh """
