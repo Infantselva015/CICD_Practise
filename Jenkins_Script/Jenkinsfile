@@ -50,6 +50,7 @@ pipeline
             steps
             {
                 echo 'Build and tests completed successfully!'
+                echo 'Done'
             }
         }
 
